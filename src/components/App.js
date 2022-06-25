@@ -21,7 +21,7 @@ componentDidMount(){
 }
 
   render(){
-    const movies = this.props.store.getState();
+    const { list } = this.props.store.getState(); // {list: [], favourites: []}
   return <div className="App">
     <Navbar/>
     <div className="main">
@@ -30,7 +30,7 @@ componentDidMount(){
         <div className="tab">Favourites</div>
       </div>
       <div className="list">
-        { movies.map((movie, index) => (
+        { list.map((movie, index) => (
           <MovieCard movie = {movie} key={`movies- ${index}`} />
         ))}
        
